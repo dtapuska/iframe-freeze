@@ -46,10 +46,13 @@ Introduce two feature policy values:
 * `freeze-out-of-viewport` indicates freezing frames that aren't in the viewport
 * `freeze-not-rendered` indicates freezing frames that aren't rendered
 
-The feature policy value `no-media-resume` provides the ability to
-not auto resume media that was previously playing before the `freeze` event.
+Media that was paused will automatically be resumed for
+`freeze-out-of-viewport` frames that become visible in the viewport.
+
+Media that was paused will remain paused for `freeze-not-rendered`
+frames when they become rendered.
 
 ```
-<iframe allow="freeze-out-of-viewport *(no-media-resume)">
-<iframe allow="freeze-not-rendered *(no-media-resume)">
+<iframe allow="freeze-out-of-viewport *">
+<iframe allow="freeze-not-rendered *">
 ```
