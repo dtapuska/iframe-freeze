@@ -43,16 +43,16 @@ do that in their freeze and resume events.
 ## Feature Policy
 
 Introduce two feature policy values:
-* `freeze-out-of-viewport` indicates freezing frames that aren't in the viewport
-* `freeze-not-rendered` indicates freezing frames that aren't rendered
+* `execution-while-out-of-viewport` indicates freezing frames that aren't in the viewport
+* `execution-while-not-rendered` indicates freezing frames that aren't rendered
 
 Media that was paused will automatically be resumed for
-`freeze-out-of-viewport` frames that become visible in the viewport.
+`execution-while-out-of-viewport` frames that become visible in the viewport.
 
-Media that was paused will remain paused for `freeze-not-rendered`
+Media that was paused will remain paused for `execution-while-not-rendered`
 frames when they become rendered.
 
 ```
-<iframe allow="freeze-out-of-viewport *">
-<iframe allow="freeze-not-rendered *">
+<iframe allow="execution-while-out-of-viewport 'none'">
+<iframe allow="execution-while-not-rendered 'none'">
 ```
