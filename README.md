@@ -40,6 +40,11 @@ and [resume](https://wicg.github.io/page-lifecycle/spec.html#dom-document-onresu
 documens wish to control pausing the media themselves it is suggested that they
 do that in their freeze and resume events.
 
+Same origin or different origin iframes should be treated the same according to this
+policy. Same origin documents could present problems being directly scriptable from
+the parent frame. However, since the policy is explicitly opt-in it is a negotiation
+between a embedder and embeddee.
+
 ## Feature Policy
 
 Introduce two feature policy values:
